@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Archivo";;
+  src: url('../fonts/Archivo-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url('../fonts/Inter-Variable.ttf') format('truetype');
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+.activeLink {
+  @apply text-[#636AE8FF] font-semibold underline decoration-2 underline-offset-4;
+}
+
+.link {
+  @apply hover:text-[#636AE8FF] transition duration-300 ease-in-out;
+}
+
+.button {
+  @apply block px-4 py-2 rounded-md border border-[#636ae8ff] text-[#636ae8ff] hover:text-white font-semibold transition duration-300 ease-in-out dark:text-white hover:bg-[#4E5BBF] focus:outline-none cursor-pointer;
+}
+
+.widthBase {
+  @apply max-w-7xl mx-auto;
+}
