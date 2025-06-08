@@ -17,13 +17,8 @@ const globalQuery = qs.stringify({
   populate: {
     navbar: {
       populate: {
-        logo: {
-          populate: {
-            image: {
-              fields: ["name", "url"],
-            },
-            cta: true,
-          },
+        logoImage: {
+          fields: ["name", "url"],
         },
         links: true,
       },
@@ -32,13 +27,8 @@ const globalQuery = qs.stringify({
       populate: {
         footerNav: {
           populate: {
-            logo: {
-              populate: {
-                image: {
-                  fields: ["name", "url"],
-                },
-                cta: true,
-              },
+            logoImage: {
+              fields: ["name", "url"],
             },
             links: true,
           },

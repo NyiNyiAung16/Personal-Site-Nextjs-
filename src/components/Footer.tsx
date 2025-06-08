@@ -21,27 +21,31 @@ type FooterProps = {
             url: string;
         }
     }[];
-    footerNav?: {
+    footerNav: {
         id: number;
         links: {
             id: number;
             href: string;
             body: string;
         }[];
+        logoImage: object,
+        logoName: string;
     };
 };
 
 
 export default function Footer({ copyright, links, footerNav } : FooterProps) {
     const pathname = usePathname();
+    const logo = footerNav.logoImage;
+    const logoName = footerNav.logoName;
 
     return (
         <div className="bg-[#1D2128FF] pt-10 pb-5">
             <div className="widthBase px-2 sm:px-4">
                 <div className="flex flex-col md:flex-row justify-between items-center text-white gap-4 md:gap-0">
                     <div className="flex items-center gap-3 mb-4 md:mb-0">
-                        <Logo/>
-                        <ApplicationName/>
+                        <Logo logo={logo}/>
+                        <ApplicationName name={logoName}/>
                     </div>
 
                     <ul className="flex flex-wrap gap-3 md:gap-10 text-center justify-center">

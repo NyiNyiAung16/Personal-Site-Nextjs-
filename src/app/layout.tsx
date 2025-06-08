@@ -34,7 +34,7 @@ export default async function RootLayout({
       <body className="bg-white dark:bg-[#181A20] transition-colors duration-300">
         <Navbar
           logoName={navbar.logoName}
-          logo={navbar.logo}
+          logo={navbar.logoImage}
           links={navbar.links}
         />
         <div className="widthBase px-3 sm:px-4 lg:px-8 py-4 sm:py-6 md:py-8">{children}</div>
