@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getGlobalContent } from "@/data/actions";
+import ThemeProvider from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -31,18 +32,20 @@ export default async function RootLayout({
           type="image/x-icon"
         />
       </head>
-      <body className="bg-white dark:bg-[#181A20] transition-colors duration-300">
-        <Navbar
-          logoName={navbar.logoName}
-          logo={navbar.logoImage}
-          links={navbar.links}
-        />
-        <div className="widthBase px-3 sm:px-4 lg:px-8 py-4 sm:py-6 md:py-8">{children}</div>
-        <Footer
-          copyright={footer.copyright}
-          links={footer.links}
-          footerNav={footer.footerNav}
-        />
+      <body className="">
+        <ThemeProvider>
+          <Navbar
+            logoName={navbar.logoName}
+            logo={navbar.logoImage}
+            links={navbar.links}
+          />
+          <div className="widthBase px-3 sm:px-4 lg:px-8 py-4 sm:py-6 md:py-8">{children}</div>
+          <Footer
+            links={footer.links}
+            logoName={footer.logoName}
+            logoImage={footer.logoImage}
+          />
+        </ThemeProvider>
       </body>
     </html>
   );

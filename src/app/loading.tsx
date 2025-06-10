@@ -1,15 +1,8 @@
-import Image from "next/image";
 
 export default function Loading() {
     return (
-        <div className="max-w-full my-6">
-            <Image
-                src="/spinner.svg"
-                alt="Loading"
-                width={30}
-                height={30}
-                className="animate-spin block mx-auto"
-            />
+        <div className="flex items-center justify-center my-6">
+            <span className="loading loading-spinner loading-md text-primary"></span>
         </div>
     )
 }

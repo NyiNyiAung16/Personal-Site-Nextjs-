@@ -20,7 +20,7 @@ export default async function BlogsPage({ searchParams }: Props) {
   return (
     <div>
       <h2
-        className="text-3xl font-bold text-neutral-900 dark:text-white text-center transition-colors duration-300 mb-4"
+        className="text-[1.75rem] sm:text-[2.25rem] font-bold text-center mb-4"
         style={{ fontFamily: "Archivo" }}
       >
         Latest Blog Posts

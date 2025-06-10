@@ -12,7 +12,7 @@ export default function BaseLink({
   return (
     <Link
       href={href}
-      className={`hover:text-[#636AE8FF] hover:font-semibold transition duration-300 ease-ixn-out ${className}`}
+      className={`link hover:link-primary no-underline ${className}`}
     >
       {children}
     </Link>

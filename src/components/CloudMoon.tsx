@@ -1,4 +1,4 @@
-export default function SunMoon({ onClick }: { onClick?: () => void }) {
+export default function SunMoon({ onClick, className }: { onClick?: () => void, className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,7 +10,7 @@ export default function SunMoon({ onClick }: { onClick?: () => void }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-cloud-moon-icon lucide-cloud-moon cursor-pointer hover:scale-110 duration-200"
+      className={`lucide lucide-cloud-moon-icon lucide-cloud-moon cursor-pointer hover:scale-110 duration-200 ${className}`}
       onClick={onClick}
     >
       <path d="M10.188 8.5A6 6 0 0 1 16 4a1 1 0 0 0 6 6 6 6 0 0 1-3 5.197" />

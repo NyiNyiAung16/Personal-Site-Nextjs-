@@ -33,13 +33,13 @@ export default async function AboutPage() {
         aboutData.td.map((item: itemType) => (
           <div key={item.id} className="py-2 sm:py-4 md:py-6">
             <h3
-              className="text-xl sm:text-2xl md:text-3xl text-center py-3 sm:py-4 md:py-6 text-neutral-900 dark:text-white transition-colors duration-300"
+              className="text-xl sm:text-2xl md:text-3xl text-center py-3 sm:py-4 md:py-6 text-base-content font-bold"
               style={{ fontFamily: "Archivo" }}
             >
               {item.title}
             </h3>
 
-            <p className="text-[#565E6CFF] dark:text-neutral-300 text-center text-sm sm:text-base lg:text-lg px-1 sm:px-4 transition-colors duration-300">
+            <p className="text-base-content/70 text-center text-sm sm:text-base lg:text-lg px-1 sm:px-4">
               {item.description}
             </p>
           </div>
@@ -47,7 +47,7 @@ export default async function AboutPage() {
 
       <div className="py-6 sm:py-8">
         <h3
-          className="text-xl sm:text-2xl md:text-3xl text-center py-3 sm:py-4 md:py-6 text-neutral-900 dark:text-white transition-colors duration-300"
+          className="text-xl sm:text-2xl md:text-3xl text-center py-3 sm:py-4 md:py-6 text-base-content font-bold"
           style={{ fontFamily: "Archivo" }}
         >
           Meet the Developer
@@ -57,21 +57,23 @@ export default async function AboutPage() {
             aboutData.mtd.map((item: mtdType) => (
               <div
                 key={item.id}
-                className="w-full sm:w-[340px] max-w-[276px] sm:max-w-[340px] rounded-md p-4 flex flex-col gap-2 shadow-sm mx-auto bg-white dark:bg-[#23272f] transition-colors duration-300"
+                className="card w-full sm:w-[340px] max-w-[276px] sm:max-w-[340px] bg-base-100 shadow-md mx-auto"
               >
-                <Image
-                  src={getAbsoluteUrl(item.image.url)}
-                  alt={item.image.name}
-                  width={100}
-                  height={100}
-                  className="w-full max-w-[244px] sm:max-w-[300px] h-auto rounded-xl mx-auto"
-                />
-                <h5 className="text-base sm:text-lg text-[#171A1FFF] dark:text-white font-bold text-center mt-2 transition-colors duration-300">
-                  {item.devName}
-                </h5>
-                <p className="text-[#9095A0FF] dark:text-neutral-300 text-center text-sm sm:text-base transition-colors duration-300">
-                  {item.devPosition}
-                </p>
+                <div className="card-body items-center p-4 flex flex-col gap-2">
+                  <Image
+                    src={getAbsoluteUrl(item.image.url)}
+                    alt={item.image.name}
+                    width={100}
+                    height={100}
+                    className="w-full max-w-[244px] sm:max-w-[300px] h-auto rounded-xl mx-auto"
+                  />
+                  <h5 className="card-title text-base sm:text-lg text-base-content font-bold text-center mt-2">
+                    {item.devName}
+                  </h5>
+                  <p className="text-base-content/70 text-center text-sm sm:text-base">
+                    {item.devPosition}
+                  </p>
+                </div>
               </div>
             ))}
         </div>

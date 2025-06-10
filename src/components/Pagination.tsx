@@ -35,17 +35,17 @@ export default function Pagination({
   }, [page, handlePageChange]);
 
   return (
-    <div className="flex items-center justify-between border-t border-gray-200 dark:border-[#23272f] bg-white dark:bg-[#181A20] px-4 py-3 sm:px-6 transition-colors duration-300">
+    <div className="flex items-center justify-between border-t border-base-200 bg-base-100 px-4 py-3 sm:px-6 transition-colors duration-300">
       <div className="flex flex-1 justify-between sm:hidden">
         <button
-          className="relative inline-flex items-center rounded-md border border-gray-300 dark:border-[#23272f] bg-white dark:bg-[#23272f] px-4 py-2 text-sm font-medium text-gray-700 dark:text-neutral-200 hover:bg-gray-50 dark:hover:bg-[#23272f]/80 cursor-pointer transition-colors duration-200"
+          className="relative inline-flex items-center rounded-md border border-base-300 bg-base-100 px-4 py-2 text-sm font-medium text-base-content hover:bg-base-200 cursor-pointer transition-colors duration-200"
           onClick={() => setPage((prev) => (prev > 0 ? prev - 1 : 0))}
           disabled={page === 1}
         >
           Previous
         </button>
         <button
-          className="relative ml-3 inline-flex items-center rounded-md border border-gray-300 dark:border-[#23272f] bg-white dark:bg-[#23272f] px-4 py-2 text-sm font-medium text-gray-700 dark:text-neutral-200 hover:bg-gray-50 dark:hover:bg-[#23272f]/80 cursor-pointer transition-colors duration-200"
+          className="relative ml-3 inline-flex items-center rounded-md border border-base-300 bg-base-100 px-4 py-2 text-sm font-medium text-base-content hover:bg-base-200 cursor-pointer transition-colors duration-200"
           onClick={() =>
             setPage((prev) => (prev < pageCount ? prev + 1 : prev))
           }
@@ -56,7 +56,7 @@ export default function Pagination({
       </div>
       <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm text-gray-700 dark:text-neutral-200 transition-colors duration-200">
+          <p className="text-sm text-base-content transition-colors duration-200">
             Showing
             <span className="font-medium px-1">{pageNumber}</span>
             to
@@ -72,8 +72,8 @@ export default function Pagination({
             aria-label="Pagination"
           >
             <button
-              className={`relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 dark:text-neutral-400 ring-1 ring-gray-300 dark:ring-[#23272f] ring-inset hover:bg-gray-50 dark:hover:bg-[#23272f]/80 focus:z-20 focus:outline-offset-0 ${
-                page === 1 ? "cursor-not-allowed" : "cursor-pointer"
+              className={`relative inline-flex items-center rounded-l-md px-2 py-2 text-base-content ring-1 ring-base-300 ring-inset hover:bg-base-200 focus:z-20 focus:outline-offset-0 ${
+                page === 1 ? "cursor-not-allowed opacity-50" : "cursor-pointer"
               } transition-colors duration-200`}
               onClick={() => setPage((prev) => (prev > 0 ? prev - 1 : 0))}
               disabled={page === 1}
@@ -97,11 +97,11 @@ export default function Pagination({
               <div
                 key={index}
                 aria-current="page"
-                className={`relative z-10 inline-flex items-center px-4 py-2 text-sm font-semibold focus:z-20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer
+                className={`relative z-10 inline-flex items-center px-4 py-2 text-sm font-semibold focus:z-20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary cursor-pointer
                     ${
                       page === pageNumber
-                        ? "bg-indigo-600 text-white"
-                        : "text-gray-900 dark:text-neutral-200 ring-1 ring-gray-300 dark:ring-[#23272f] ring-inset hover:bg-gray-50 dark:hover:bg-[#23272f]/80"
+                        ? "bg-primary text-primary-content"
+                        : "text-base-content ring-1 ring-base-300 ring-inset hover:bg-base-200"
                     } transition-colors duration-200`}
                 onClick={() => setPage(page)}
               >
@@ -109,8 +109,8 @@ export default function Pagination({
               </div>
             ))}
             <button
-              className={`relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 dark:text-neutral-400 ring-1 ring-gray-300 dark:ring-[#23272f] ring-inset hover:bg-gray-50 dark:hover:bg-[#23272f]/80 focus:z-20 focus:outline-offset-0 ${
-                page == pageCount ? "cursor-not-allowed" : "cursor-pointer"
+              className={`relative inline-flex items-center rounded-r-md px-2 py-2 text-base-content ring-1 ring-base-300 ring-inset hover:bg-base-200 focus:z-20 focus:outline-offset-0 ${
+                page == pageCount ? "cursor-not-allowed opacity-50" : "cursor-pointer"
               } transition-colors duration-200`}
               onClick={() =>
                 setPage((prev) => (prev < pageCount ? prev + 1 : prev))

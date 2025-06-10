@@ -1,4 +1,4 @@
-export default function SunLight({ onClick }: { onClick?: () => void }) {
+export default function SunLight({ onClick, className }: { onClick?: () => void, className?: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,7 +10,7 @@ export default function SunLight({ onClick }: { onClick?: () => void }) {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-cloud-sun-icon lucide-cloud-sun cursor-pointer hover:scale-110 duration-200"
+      className={`lucide lucide-cloud-sun-icon lucide-cloud-sun cursor-pointer hover:scale-110 duration-200 ${className}`}
       onClick={onClick}
     >
       <path d="M12 2v2" />
