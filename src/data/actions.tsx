@@ -9,33 +9,19 @@ import {
 } from "@/utils/query";
 
 const getFetch = async (path: string, query: string) => {
-  try {
-    const baseUrl = getBaseUrl();
-    if (!baseUrl) {
-      throw new Error("Base URL is not defined");
-    }
+  const url = new URL(path, getBaseUrl());
+  url.search = query;
 
-    const url = new URL(path, baseUrl);
-    url.search = query;
+  const response = await fetch(url.href);
+  const data = await response.json();
 
-    const response = await fetch(url.href);
-
-    if (!response.ok) {
-      const data = await response.json().catch(() => null);
-      const error = data?.error || { message: "Failed to fetch data" };
-      throw new Error(error.message, {
-        cause: {
-          status: response.status,
-          error,
-        },
-      });
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    throw error;
+  if (!response.ok) {
+    throw new Error(data?.error?.message ?? "Failed to fetch data", {
+      cause: { status: response.status, error: data?.error },
+    });
   }
+
+  return data;
 };
 
 const getGlobalContent = async () => {

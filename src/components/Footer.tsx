@@ -29,7 +29,7 @@ export default function Footer({ links, logoName, logoImage }: FooterProps) {
     <footer className="footer footer-horizontal footer-center bg-base-200 p-10">
       <aside>
         <Image
-            src={getAbsoluteUrl(logoImage.url)}
+            src={getAbsoluteUrl(logoImage?.url)}
             width={50}
             height={50}
             alt={logoName || "Logo"}
@@ -47,7 +47,7 @@ export default function Footer({ links, logoName, logoImage }: FooterProps) {
               <li key={link.id} className="hover:scale-110 duration-200">
                 <Link href={link.cta.href} target={"_blank"}>
                   <Image
-                    src={getAbsoluteUrl(link.image.url)}
+                    src={getAbsoluteUrl(link.image?.url)}
                     width={30}
                     height={30}
                     alt={link.image.name}

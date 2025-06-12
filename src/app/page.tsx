@@ -21,7 +21,7 @@ export default async function Home() {
       <HeroSection
         title={heroData.title}
         description={heroData.description}
-        videoUrl={heroData.video.url}
+        videoUrl={heroData.video?.url}
         link={heroData.link}
       />
       <div className="my-12 sm:my-16 md:my-20">

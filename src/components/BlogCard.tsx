@@ -12,7 +12,7 @@ export default function BlogCard({ blog }: { blog: Blog }) {
       <div className="card max-w-96 shadow-lg">
         <figure>
           <Image
-            src={getAbsoluteUrl(blog.image.url)}
+            src={getAbsoluteUrl(blog.image?.url)}
             alt={blog.image.name}
             width={344}
             height={162}

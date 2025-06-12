@@ -61,7 +61,7 @@ export default async function AboutPage() {
               >
                 <div className="card-body items-center p-4 flex flex-col gap-2">
                   <Image
-                    src={getAbsoluteUrl(item.image.url)}
+                    src={getAbsoluteUrl(item.image?.url)}
                     alt={item.image.name}
                     width={100}
                     height={100}

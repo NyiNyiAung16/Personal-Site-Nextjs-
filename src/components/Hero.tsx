@@ -21,10 +21,10 @@ export default function HeroSection(data: HeroSectionProps) {
             controls
             className="w-full h-full object-cover rounded-lg shadow-lg"
           >
-            <source src={getAbsoluteUrl(data.videoUrl)} type="video/mp4" />
+            <source src={getAbsoluteUrl(data?.videoUrl)} type="video/mp4" />
             Sorry, your browser does not support the video tag, but you can{" "}
             <a
-              href={getAbsoluteUrl(data.videoUrl)}
+              href={getAbsoluteUrl(data?.videoUrl)}
               className="text-blue-500 underline"
             >
               download the video
