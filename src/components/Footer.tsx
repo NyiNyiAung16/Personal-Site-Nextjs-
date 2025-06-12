@@ -5,7 +5,7 @@ import Image from "next/image";
 import getAbsoluteUrl from "@/utils/getAbsoluteUrl";
 
 type FooterProps = {
-  links?: {
+  links: {
     id: number;
     cta: {
       href: string;
@@ -16,8 +16,8 @@ type FooterProps = {
       url: string;
     };
   }[];
-logoName?: string;
-logoImage?: {
+logoName: string;
+logoImage: {
     name: string;
     url: string;
 };
@@ -29,7 +29,7 @@ export default function Footer({ links, logoName, logoImage }: FooterProps) {
     <footer className="footer footer-horizontal footer-center bg-base-200 p-10">
       <aside>
         <Image
-            src={getAbsoluteUrl(logoImage?.url)}
+            src={getAbsoluteUrl(logoImage.url)}
             width={50}
             height={50}
             alt={logoName || "Logo"}
