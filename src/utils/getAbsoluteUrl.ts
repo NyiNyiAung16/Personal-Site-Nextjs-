@@ -1,6 +1,6 @@
 import getBaseUrl from "./getBaseUrl";
 
 export default function getAbsoluteUrl(url: string): string {
-    // return url.startsWith('http') ? url : `${getBaseUrl()}${url}`;
-    return `${getBaseUrl()}${url}`;
-};
+    const baseUrl = getBaseUrl();
+    return url.startsWith('http') ? url : baseUrl + url;
+}

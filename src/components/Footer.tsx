@@ -29,7 +29,7 @@ export default function Footer({ links, logoName, logoImage }: FooterProps) {
     <footer className="footer footer-horizontal footer-center bg-base-200 p-10">
       <aside>
         <Image
-            src={getAbsoluteUrl(logoImage?.url || "/coding.svg")}
+            src={getAbsoluteUrl(logoImage?.url)}
             width={50}
             height={50}
             alt={logoName || "Logo"}
