@@ -9,7 +9,7 @@ export default function BlogCard({ blog }: { blog: Blog }) {
 
   return (
     <>
-      <div className="card max-w-96 shadow-lg">
+      <div className="card max-w-96 shadow-lg hover:scale-105 transition-transform duration-300">
         <figure>
           <Image
             src={getAbsoluteUrl(blog.image?.url)}

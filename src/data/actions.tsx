@@ -12,6 +12,7 @@ const getFetch = async (path: string, query: string) => {
   const url = new URL(path, getBaseUrl());
   url.search = query;
 
+  
   const response = await fetch(url.href);
   const data = await response.json();
 

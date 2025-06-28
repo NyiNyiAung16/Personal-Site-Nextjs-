@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 
 export default function DarkMode() {
   const [theme, setTheme] = useState("light");
- 
+
   useEffect(() => {
-  const savedTheme = localStorage.getItem("theme") || "light";
-  setTheme(savedTheme);
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
   }, []);
 
   const handleThemeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,7 +17,7 @@ export default function DarkMode() {
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
   };
-  
+
   return (
     <label className="swap swap-rotate">
       <input
